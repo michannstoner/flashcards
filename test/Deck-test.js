@@ -42,4 +42,4 @@ describe('Deck', function() {
     const deck1 = deck.countCards();
     expect(deck1).to.equal(2);
    });
-})
+});
