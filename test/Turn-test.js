@@ -30,4 +30,35 @@ describe('Turn', function() {
     const guess1 = turn.returnGuess();
     expect(guess1).to.deep.equal('Sasquatch');
   });
+
+  it.skip('should show the player the current card', function() {
+    const card = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
+    const turn = new Turn('Sasquatch', card);
+
+    const card1 = turn.returnCard();
+    expect(card1).to.deep.equal(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
   });
+
+  it.skip('should evaluate if the guess matches the correct answer', function() {
+    const card = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
+    const turn = new Turn('Sasquatch', card);
+    
+    const evaluation1 = turn.evaluateGuess();
+    expect(evaluation1).to.deep.equal(true);
+    expect(turn.isCorrect).to.deep.equal(true);
+  });
+
+  it.skip('should give feedback if the guess is correct', function() {
+    const turn = new Turn('Sasquatch', card);
+    
+    const feedback1 = turn.giveFeedback();
+    expect(feedback1).to.equal('Correct!');
+  });
+
+  it.skip('should give feedback if the guess is incorrect', function() {
+    const turn = new Turn('Sasquatch', card);
+    
+    const feedback2 = turn.giveFeedback();
+    expect(feedback2).to.equal('Incorrect!');
+  });
+});
