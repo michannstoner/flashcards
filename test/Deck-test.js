@@ -22,6 +22,14 @@ describe('Deck', function() {
     const card3 = new Card(3, 'Which of these is NOT a donut shop in Portland', ['Blue Star Donuts', 'Riot Donuts', 'Coco Donuts'], 'Riot Donuts');
     const deck = new Deck([card1, card2, card3]);
     expect(deck.cards).to.deep.equal([card1, card2, card3]);
+   });
 
-  });
+   it.skip('should tell the user how many cards are in the deck', function() {
+    const card1 = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
+    const card2 = new Card(2, 'What is another name for the area alongside the Columbia River?', ['The Gorge', 'The Basin', 'The Banks'], 'The Gorge');
+    const deck = new Deck([card1, card2]);
+
+    const deck1 = deck.countCards();
+    expect(deck1).to.equal(2);
+   });
 })
