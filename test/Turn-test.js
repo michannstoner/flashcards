@@ -19,7 +19,7 @@ describe('Turn', function() {
   it('should have a guess and a current card in play', function() {
     const card = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
     const turn = new Turn('Sasquatch', card);
-    expect(turn.guess).to.deep.equal('Sasquatch');
+    expect(turn.guess).to.equal('Sasquatch');
     expect(turn.currentCard).to.deep.equal(card);
     });
 
@@ -28,7 +28,7 @@ describe('Turn', function() {
     const turn = new Turn('Sasquatch', card);
     
     const guess1 = turn.returnGuess();
-    expect(guess1).to.deep.equal('Sasquatch');
+    expect(guess1).to.equal('Sasquatch');
   });
 
   it('should show the player the current card', function() {
@@ -45,8 +45,8 @@ describe('Turn', function() {
     const turn = new Turn('Sasquatch', card);
     
     const evaluation1 = turn.evaluateGuess();
-    expect(evaluation1).to.deep.equal(true);
-    expect(turn.isCorrect).to.deep.equal(true);
+    expect(evaluation1).to.equal(true);
+    expect(turn.isCorrect).to.equal(true);
   });
 
   it('should give feedback if the guess is correct', function() {
