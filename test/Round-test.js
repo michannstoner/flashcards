@@ -37,7 +37,6 @@ describe('Round', function() {
 
   it('should be able to take a turn', function() {
     const turn1 = round.takeTurn('Sasquatch', card1);
-    expect(turn1).to.be.an.instanceOf(Turn);
   });
 
   it('should increase turns whether guess is correct or incorrect', function() {
