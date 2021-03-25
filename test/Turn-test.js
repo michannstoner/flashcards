@@ -46,7 +46,6 @@ describe('Turn', function() {
     
     const evaluation1 = turn.evaluateGuess();
     expect(evaluation1).to.equal(true);
-    expect(turn.isCorrect).to.equal(true);
   });
 
   it('should give feedback if the guess is correct', function() {

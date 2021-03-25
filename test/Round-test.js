@@ -7,40 +7,63 @@ const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 
 describe('Round', function() {
+  let card1;
+  let card2;
+  let card3;
+  let deck;
+  let round;
 
-  // it('should be a function', function() {
-  //   const round = new Round();
-  //   expect(Round).to.be.a('function');
-  // });
-  
-  // it('should be an instance of Round', function() {
-  //   const round = new Round();
-  //   expect(round).to.be.an.instanceOf(Round);
-  // });
+beforeEach(function() {
+  card1 = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
+  card2 = new Card(2, 'What is another name for the area alongside the Columbia River?', ['The Gorge', 'The Basin', 'The Banks'], 'The Gorge');
+  card3 = new Card(3, 'Which of these is NOT a donut shop in Portland', ['Blue Star Donuts', 'Riot Donuts', 'Coco Donuts'], 'Riot Donuts');
+  deck = new Deck([card1, card2, card3]);
+  round = new Round(deck);
+});
 
   it('should have a current card at the start of each round', function() {
-    const card1 = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
-    const card2 = new Card(2, 'What is another name for the area alongside the Columbia River?', ['The Gorge', 'The Basin', 'The Banks'], 'The Gorge');
-     const card3 = new Card(3, 'Which of these is NOT a donut shop in Portland', ['Blue Star Donuts', 'Riot Donuts', 'Coco Donuts'], 'Riot Donuts');
-    const deck = new Deck([card1, card2, card3]);
-    const round = new Round(deck);
-
     expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
-  it('should also have turns and incorrect guesses', function() {
-    const card1 = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
-    const card2 = new Card(2, 'What is another name for the area alongside the Columbia River?', ['The Gorge', 'The Basin', 'The Banks'], 'The Gorge');
-     const card3 = new Card(3, 'Which of these is NOT a donut shop in Portland', ['Blue Star Donuts', 'Riot Donuts', 'Coco Donuts'], 'Riot Donuts');
-    const deck = new Deck([card1, card2, card3]);
-    const round = new Round(deck);
-
+  it('should keep track of turns and incorrect guesses', function() {
     expect(round.turns).to.equal(0);
     expect(round.incorrectGuesses).to.deep.equal([]);
+  });
 
-  })
+  it('should return the current card', function() {
+    const currentCard1 = round.returnCurrentCard();
+    expect(currentCard1).to.equal(card1);
+  });
 
+  it('should be able to take a turn', function() {
+    const turn1 = round.takeTurn('Sasquatch', card1);
+  });
 
+  it('should increase turns whether guess is correct or incorrect', function() {
+    round.takeTurn('Sasquatch', card1);
+    expect(round.turns).to.equal(1);
+  });
+
+  it('should return feedback if the answer is correct', function() {
+    const turn1 = round.takeTurn('Sasquatch');
+    expect(turn1).to.equal('Correct!');
+  });
+
+  it('should return feedback if the answer is incorrect', function() {
+    const turn1 = round.takeTurn('Monster');
+    expect(turn1).to.equal('Incorrect!');
+  });
+
+  it.skip('should store incorrect guesses', function() {
+    round.takeTurn('Monster');
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+  });
+
+  it('should make the next card the current card', function() {
+    round.takeTurn('Sasquatch');
+    expect(round.currentCard).to.equal(card2);
+  });
+
+  it.skip('should return the percentage of correct guesses', function() {
 });
-
-
+});
