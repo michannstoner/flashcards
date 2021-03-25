@@ -13,13 +13,13 @@ describe('Round', function() {
   let deck;
   let round;
 
-beforeEach(function() {
-  card1 = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
-  card2 = new Card(2, 'What is another name for the area alongside the Columbia River?', ['The Gorge', 'The Basin', 'The Banks'], 'The Gorge');
-  card3 = new Card(3, 'Which of these is NOT a donut shop in Portland', ['Blue Star Donuts', 'Riot Donuts', 'Coco Donuts'], 'Riot Donuts');
-  deck = new Deck([card1, card2, card3]);
-  round = new Round(deck);
-});
+  beforeEach(function() {
+    card1 = new Card(1, 'What is the name of a monster that is said to roam the PNW', ['Monster', 'Sasquatch', 'Gorilla'], 'Sasquatch');
+    card2 = new Card(2, 'What is another name for the area alongside the Columbia River?', ['The Gorge', 'The Basin', 'The Banks'], 'The Gorge');
+    card3 = new Card(3, 'Which of these is NOT a donut shop in Portland', ['Blue Star Donuts', 'Riot Donuts', 'Coco Donuts'], 'Riot Donuts');
+    deck = new Deck([card1, card2, card3]);
+    round = new Round(deck);
+  });
 
   it('should have a deck of cards at the start of each round', function() {
     expect(round.deck).to.deep.equal([card1, card2, card3]);
@@ -37,6 +37,7 @@ beforeEach(function() {
 
   it('should be able to take a turn', function() {
     const turn1 = round.takeTurn('Sasquatch', card1);
+    expect(turn1).to.be.an.instanceOf(Turn);
   });
 
   it('should increase turns whether guess is correct or incorrect', function() {
@@ -73,7 +74,7 @@ beforeEach(function() {
     const percentage = round.calculatePercentCorrect();
     expect(percentage).to.deep.equal(33);
 
-});
+  });
 
   it('should tell the user when a round has ended, and their percent of correct answers', function() {
     round.takeTurn('Sasquatch');
