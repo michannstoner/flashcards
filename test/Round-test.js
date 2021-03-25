@@ -21,7 +21,7 @@ beforeEach(function() {
   round = new Round(deck);
 });
 
-  it('should have a current card at the start of each round', function() {
+  it('should have a deck of cards at the start of each round', function() {
     expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
@@ -30,7 +30,7 @@ beforeEach(function() {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it('should return the current card', function() {
+  it('the current card should be the first in the deck, and should return the current card', function() {
     const currentCard1 = round.returnCurrentCard();
     expect(currentCard1).to.equal(card1);
   });
@@ -57,10 +57,10 @@ beforeEach(function() {
   it('should store incorrect guesses', function() {
     round.takeTurn('Monster');
 
-    expect(round.incorrectGuesses.length).to.deep.equal(1);
+    expect(round.incorrectGuesses).to.deep.equal([1]);
   });
 
-  it('should make the next card the current card', function() {
+  it('should make the next card the current card after a guess is made', function() {
     round.takeTurn('Sasquatch');
     expect(round.currentCard).to.equal(card2);
   });
@@ -75,7 +75,7 @@ beforeEach(function() {
 
 });
 
-  it('should tell the user when a round has ended and their percentage correct', function() {
+  it('should tell the user when a round has ended, and their percent of correct answers', function() {
     round.takeTurn('Sasquatch');
     round.takeTurn('The Basin');
     round.takeTurn('Coco Donuts');
