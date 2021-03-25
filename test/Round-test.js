@@ -54,9 +54,10 @@ beforeEach(function() {
     expect(turn1).to.equal('Incorrect!');
   });
 
-  it.skip('should store incorrect guesses', function() {
+  it('should store incorrect guesses', function() {
     round.takeTurn('Monster');
-    expect(round.incorrectGuesses).to.deep.equal([1]);
+
+    expect(round.incorrectGuesses.length).to.deep.equal(1);
   });
 
   it('should make the next card the current card', function() {
@@ -64,6 +65,23 @@ beforeEach(function() {
     expect(round.currentCard).to.equal(card2);
   });
 
-  it.skip('should return the percentage of correct guesses', function() {
+  it('should calculate the percentage of correct guesses', function() {
+    round.takeTurn('Sasquatch');
+    round.takeTurn('The Basin');
+    round.takeTurn('Coco Donuts');
+
+    const percentage = round.calculatePercentCorrect();
+    expect(percentage).to.deep.equal(33);
+
 });
+
+  it('should tell the user when a round has ended and their percentage correct', function() {
+    round.takeTurn('Sasquatch');
+    round.takeTurn('The Basin');
+    round.takeTurn('Coco Donuts');
+    round.calculatePercentCorrect();
+
+    const end = round.endRound();
+    expect(end).to.equal('Round over! You answered 33% of the questions correctly!')
+  });
 });
