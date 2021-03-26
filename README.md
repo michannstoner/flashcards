@@ -1,6 +1,7 @@
 ## FlashCards 
 
 A solo project by [Michann Stoner](https://github.com/michannstoner).
+Full project spec can be found [here](https://frontend.turing.io/projects/flash-cards.html).
 
 ### Description 
 
