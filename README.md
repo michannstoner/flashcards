@@ -4,15 +4,20 @@ A solo project by [Michann Stoner](https://github.com/michannstoner).
 
 ### Description 
 
-FlashCards is a 'game' that is fully playable through the command line!😯 It is intended to simulate a set of flash cards, where the user is able to see questions, guess the answer, find out if they were correct or not, and see a final score at the end of the round. Use it to study, to have fun trivia nights, or see how well you and your friends know each other! 
+FlashCards is a 'game' that is fully playable through the command line!😯  It is intended to simulate a set of flash cards, where the user is able to see questions, guess the answer, find out if they were correct or not, and see a final score at the end of the round. Use it to study, to have fun trivia nights, or see how well you and your friends know each other! 
 
 ### How To Play
 
 -Run `node index.js` in your command line 
+
 -See your first question, and a list of possible answers
+
 -Use your up/down arrows on your keyboard to choose which answer you think is correct
--Press enter! 
+
+-Press enter!
+
 -Get feedback on whether you're correct or not
+
 -Press enter for your next question, and continue until your round is over
 
 ### Game Display
