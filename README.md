@@ -9,7 +9,11 @@ FlashCards is a 'game' that is fully playable through the command line! It is in
 ### How To Play
 
 ### Game Display
+**Begin Game**
+![](https://media.giphy.com/media/lytjQikqnLp5fLxHGj/giphy.gif)
 
+**End of Game**
+![](https://media.giphy.com/media/sKdgxA1Ow0gIHbLDsh/giphy.gif)
 
 ### Setup
 
