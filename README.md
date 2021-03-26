@@ -16,12 +16,12 @@ FlashCards is a 'game' that is fully playable through the command line!😯 It i
 -Press enter for your next question, and continue until your round is over
 
 ### Game Display
-######**Begin Game**
+##### **Begin Game**
 
 ![](https://media.giphy.com/media/lytjQikqnLp5fLxHGj/giphy.gif)
 
 
-######**End of Game**
+##### **End of Game**
 
 ![](https://media.giphy.com/media/sKdgxA1Ow0gIHbLDsh/giphy.gif)
 
