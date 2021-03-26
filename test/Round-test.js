@@ -37,6 +37,7 @@ describe('Round', function() {
 
   it('should be able to take a turn', function() {
     const turn1 = round.takeTurn('Sasquatch', card1);
+    expect(round.takeTurn).to.be.a('function');
   });
 
   it('should increase turns whether guess is correct or incorrect', function() {
@@ -82,6 +83,6 @@ describe('Round', function() {
     round.calculatePercentCorrect();
 
     const end = round.endRound();
-    expect(end).to.equal('Round over! You answered 33% of the questions correctly!')
+    expect(end).to.equal('** Round over! ** You answered 33% of the questions correctly!')
   });
 });

@@ -29,12 +29,6 @@ describe('Deck', function() {
     expect(deck.cards).to.deep.equal([card1, card2, card3]);
    });
 
-   it('should be able to add more cards to the deck', function() {
-    const card4 = new Card(4, 'There is a famous skate park under what Portland bridge?', ['Burnside', 'Fremont', 'Morrison'], 'Burnside');
-    const deck1 = deck.addCard(card4);
-     expect(deck1).to.deep.equal([card1, card2, card3, card4]);
-   });
-
    it('should tell the user how many cards are in the deck', function() {
     const deck1 = deck.countCards();
     expect(deck1).to.equal(3);
