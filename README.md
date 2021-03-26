@@ -8,17 +8,12 @@ FlashCards is a 'game' that is fully playable through the command line!😯  It 
 
 ### How To Play
 
--Run `node index.js` in your command line 
-
--See your first question, and a list of possible answers
-
--Use your up/down arrows on your keyboard to choose which answer you think is correct
-
--Press enter!
-
--Get feedback on whether you're correct or not
-
--Press enter for your next question, and continue until your round is over
+ - Run `node index.js` in your command line 
+ - See your first question, and a list of possible answers
+ - Use your up/down arrows on your keyboard to choose which answer you think is correct
+ - Press enter!
+ - Get feedback on whether you're correct or not
+ - Press enter for your next question, and continue until your round is over
 
 ### Game Display
 ##### **Begin Game**
