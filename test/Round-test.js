@@ -83,6 +83,6 @@ describe('Round', function() {
     round.calculatePercentCorrect();
 
     const end = round.endRound();
-    expect(end).to.equal('Round over! You answered 33% of the questions correctly!')
+    expect(end).to.equal('** Round over! ** You answered 33% of the questions correctly!')
   });
 });
